@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>ROT13 - Algoritmo de Cifra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f0f5;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #4a90e2;
+        }
+        section {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            font-size: 1rem;
+            padding: 10px;
+            resize: vertical;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e1f0ff;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Algoritmo ROT13</h1>
+        <h4><a href="https://linkedin.com/in/rafaelholder" target="_blank">Saiba mais sobre mim :)</a></h4>
+        <h5><a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">Saiba mais sobre ROT13</a></h5>
+        
+    </header>
+
+    <section>
+        <p>ROT13 é uma cifra de substituição simples que substitui cada letra pela letra 13 posições à frente no alfabeto.</p>
+        <p>É um caso especial da cifra César, onde a chave é 13. Como o alfabeto tem 26 letras, aplicar ROT13 duas vezes retorna o texto original.</p>
+
+        <form method="POST">
+            <label for="texto">Digite o texto para aplicar ROT13:</label>
+            <textarea name="texto" id="texto" placeholder="Digite seu texto aqui...">{{ texto_original }}</textarea>
+            <button type="submit">Converter</button>
+        </form>
+
+        {% if resultado %}
+        <div class="resultado">
+            <h3>Texto convertido:</h3>
+            <p>{{ resultado }}</p>
+        </div>
+        {% endif %}
+    </section>
+</body>
+</html>
